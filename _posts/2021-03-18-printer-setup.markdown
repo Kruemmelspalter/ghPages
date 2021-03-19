@@ -12,28 +12,28 @@ title:  "Using a Brother MFC-7360N with CUPS"
 To use a printer, you need a driver. The appropriate driver is `brlaser` so install it with `apt-get install printer-driver-brlaser` (you might have to use [sudo](https://www.howtoforge.com/tutorial/sudo-beginners-guide/) and also [update the package list](https://itsfoss.com/apt-get-linux-guide/)). Then setup the printer in CUPS:
 
 1. Open CUPS (`http://localhost:631`)
-{% picture /_images/cups-0.png %}
+![](/assets/cups-0.png)
 
 2. Go to the Administration tab
-{% picture /_images/cups-1.png %}
+![](/assets/cups-1.png)
 
 3. Click on Printers > Add Printer
-{% picture /_images/cups-2.png %}
+![](/assets/cups-2.png)
 
 4. Click on `LPD/LPR Host or Printer` and on Continue
-{% picture /_images/cups-3.png %} {% picture /_images/cups-4.png %}
+![](/assets/cups-3.png) ![](/assets/cups-4.png)
 
 5. Enter `lpd://<printerIP>/BRFAX` and click on Continue
-{% picture /_images/cups-5.png %}
+![](/assets/cups-5.png)
 
 6. Enter a name, description (optional), location (optional) and click on Continue
-{% picture /_images/cups-6.png %}
+![](/assets/cups-6.png)
 
 7. Select Brother and click on Continue
-{% picture /_images/cups-7.png %}
+![](/assets/cups-7.png)
 
 8. Select your printer model and click on Add Printer
-{% picture /_images/cups-8.png %}
+![](/assets/cups-8.png)
 
 9. Just use the default options by clicking on Set Default Options
 
@@ -47,7 +47,7 @@ Luckily, there's already a [docker container with a CUPS server](https://hub.doc
 
 Dockerfile
 ```
-ROM ydkn/cups
+FROM ydkn/cups
 RUN apt-get update
 RUN apt-get install -y printer-driver-brlaser
 ```
